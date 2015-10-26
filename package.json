@@ -17,8 +17,19 @@
   },
   "homepage": "https://github.com/ph0bos/request-service-discovery",
   "dependencies": {
+    "custom-error-generator": "^7.0.0",
     "request": "^2.65.0",
     "retry": "^0.8.0",
-    "zoologist": "^0.4.7"
+    "unirest": "^0.4.2",
+    "zoologist": "^0.4.7",
+    "bunyan": "^1.5.1"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0",
+    "mocha-bamboo-reporter": "*",
+    "supertest": "^0.15.0",
+    "sinon": "^1.15.4",
+    "sinon-chai": "^2.8.0"
   }
 }
