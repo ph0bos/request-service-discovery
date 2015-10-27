@@ -33,6 +33,17 @@ describe('request-service-discovery', function () {
     });
   });
 
+  it('calling get() when the zoologist is connected but no servvices are available should throw an error', function (done) {
+    mockery.registerMock('./zoologist', _createConnectedZoologistMock());
+
+    var instance = _createInstanceWithMissingService();
+
+    instance.get('resource-name/1234', null, function(err, result) {
+      err.should.be.defined;
+      done();
+    });
+  });
+
   it('calling put() when the zoologist is not connected it should throw an error', function (done) {
     mockery.registerMock('./zoologist', _createDisconnectedZoologistMock());
 
@@ -75,12 +86,30 @@ function _createInstance() {
   });
 }
 
+function _createInstanceWithMissingService() {
+  return new RequestServiceDiscovery({
+    basePath: 'services',
+    serviceName: 'test/missing-service/v1',
+    connectionString: '127.0.0.1:2181'
+  });
+}
+
 function _createDisconnectedZoologistMock() {
   return {
     init: function() {
     },
     isConnected: function() {
       return false;
+    }
+  };
+}
+
+function _createConnectedZoologistMock() {
+  return {
+    init: function() {
+    },
+    isConnected: function() {
+      return true;
     }
   };
 }
