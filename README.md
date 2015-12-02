@@ -2,7 +2,7 @@
 
 Utility module for making HTTP requests against discoverable services registered with ZooKeeper.
 
-[![NPM](https://nodei.co/npm/request-service-discovery.png?downloadRank=true)](https://npmjs.org/package/request-service-discovery?downloadRank=true)
+[![NPM](https://nodei.co/npm/request-service-discovery.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/request-service-discovery/)
 
 ## Basic Usage
 
