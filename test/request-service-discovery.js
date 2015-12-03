@@ -76,6 +76,39 @@ describe('request-service-discovery', function () {
       done();
     });
   });
+
+  it('calling method() when the no object method is passed in should throw an error', function (done) {
+    mockery.registerMock('./zoologist', _createDisconnectedZoologistMock());
+
+    var instance = _createInstance();
+
+    instance.method('resource-name/1234', null, function(err, result) {
+      err.should.be.defined;
+      done();
+    });
+  });
+
+  it('calling method() when no valid method is passed in should throw an error', function (done) {
+    mockery.registerMock('./zoologist', _createDisconnectedZoologistMock());
+
+    var instance = _createInstance();
+
+    instance.method('resource-name/1234', {method: "BURST"}, function(err, result) {
+      err.should.be.defined;
+      done();
+    });
+  });
+
+  it('calling method() when the zoologist is not connected it should throw an error', function (done) {
+    mockery.registerMock('./zoologist', _createDisconnectedZoologistMock());
+
+    var instance = _createInstance();
+
+    instance.method('resource-name/1234', {method: "GET"}, function(err, result) {
+      err.should.be.defined;
+      done();
+    });
+  });
 });
 
 function _createInstance() {
