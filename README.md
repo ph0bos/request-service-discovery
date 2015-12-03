@@ -34,23 +34,23 @@ var body = {
 };
 
 // Invoke a GET request against the service
-client.get('item/search', { query: query, headers: headers }, function(err, items) {
-  callback(err, items);
+client.get('item/search', { query: query, headers: headers }, function(err, res) {
+  callback(err, res.body);
 });
 
 // Invoke a PUT request against the service
-client.put('item', { query: query, headers: headers }, body, function(err, items) {
-  callback(err, items);
+client.put('item', { query: query, headers: headers }, body, function(err, res) {
+  callback(err, res.body);
 });
 
 // Invoke a POST request against the service
-client.post('item', { query: query, headers: headers }, body, function(err, items) {
-  callback(err, items);
+client.post('item', { query: query, headers: headers }, body, function(err, res) {
+  callback(err, res.body);
 });
 
 // Invoke a PUT request against the service
-client.delete('item', { query: query, headers: headers }, function(err, items) {
-  callback(err, items);
+client.delete('item', { query: query, headers: headers }, function(err, res) {
+  callback(err, res.body);
 });
 
 ```
