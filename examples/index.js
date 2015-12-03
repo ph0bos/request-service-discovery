@@ -9,6 +9,6 @@ var client = new RequestServiceDiscovery({
 });
 
 client.get('sport', null, function(err, res) {
-  console.log(err, res);
+  console.log(err, res.body);
   process.exit(1);
 });
