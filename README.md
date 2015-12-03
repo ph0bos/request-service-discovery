@@ -53,4 +53,9 @@ client.delete('item', { query: query, headers: headers }, function(err, res) {
   callback(err, res.body);
 });
 
+// Invoke a GET request against the service
+client.method('item/search', { method: 'GET', query: query, headers: headers }, function(err, res) {
+  callback(err, res.body);
+});
+
 ```
