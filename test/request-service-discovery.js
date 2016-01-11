@@ -33,7 +33,7 @@ describe('request-service-discovery', function () {
     });
   });
 
-  it('calling get() when the zoologist is connected but no servvices are available should throw an error', function (done) {
+  it('calling get() when the zoologist is connected but no services are available should throw an error', function (done) {
     mockery.registerMock('./zoologist', _createConnectedZoologistMock());
 
     var instance = _createInstanceWithMissingService();
