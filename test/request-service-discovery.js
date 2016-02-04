@@ -115,7 +115,8 @@ function _createInstance() {
   return new RequestServiceDiscovery({
     basePath: 'services',
     serviceName: 'test/service/v1',
-    connectionString: '127.0.0.1:2181'
+    connectionString: '127.0.0.1:2181',
+    verbose: false
   });
 }
 
@@ -123,7 +124,8 @@ function _createInstanceWithMissingService() {
   return new RequestServiceDiscovery({
     basePath: 'services',
     serviceName: 'test/missing-service/v1',
-    connectionString: '127.0.0.1:2181'
+    connectionString: '127.0.0.1:2181',
+    verbose: false
   });
 }
 

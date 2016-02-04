@@ -17,7 +17,8 @@ var RequestServiceDiscovery = require('request-service-discovery');
 var client = new RequestServiceDiscovery({
   connectionString: '127.0.0.1:2181',
   basePath: 'services',
-  serviceName: 'my/service/v1'
+  serviceName: 'my/service/v1',
+  verbose: false
 });
 
 var query = {
