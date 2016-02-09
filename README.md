@@ -18,7 +18,11 @@ var client = new RequestServiceDiscovery({
   connectionString: '127.0.0.1:2181',
   basePath: 'services',
   serviceName: 'my/service/v1',
-  verbose: false
+  verbose: false,
+  timeout: 1000,
+  retries: 2,
+  minTimeout: 5,
+  maxTimeout: 50
 });
 
 var query = {
