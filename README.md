@@ -34,29 +34,33 @@ var body = {
  "prop2": "value2"  
 };
 
-// Invoke a GET request against the service
-client.get('item/search', { query: query, headers: headers }, function(err, res) {
-  callback(err, res.body);
-});
+client.on('connected', function() {
 
-// Invoke a PUT request against the service
-client.put('item', { query: query, headers: headers }, body, function(err, res) {
-  callback(err, res.body);
-});
+  // Invoke a GET request against the service
+  client.get('item/search', { query: query, headers: headers }, function(err, res) {
+    callback(err, res.body);
+  });
 
-// Invoke a POST request against the service
-client.post('item', { query: query, headers: headers }, body, function(err, res) {
-  callback(err, res.body);
-});
+  // Invoke a PUT request against the service
+  client.put('item', { query: query, headers: headers }, body, function(err, res) {
+    callback(err, res.body);
+  });
 
-// Invoke a PUT request against the service
-client.delete('item', { query: query, headers: headers }, function(err, res) {
-  callback(err, res.body);
-});
+  // Invoke a POST request against the service
+  client.post('item', { query: query, headers: headers }, body, function(err, res) {
+    callback(err, res.body);
+  });
 
-// Invoke a GET request against the service
-client.method('item/search', { method: 'GET', query: query, headers: headers }, function(err, res) {
-  callback(err, res.body);
+  // Invoke a PUT request against the service
+  client.delete('item', { query: query, headers: headers }, function(err, res) {
+    callback(err, res.body);
+  });
+
+  // Invoke a GET request against the service
+  client.method('item/search', { method: 'GET', query: query, headers: headers }, function(err, res) {
+    callback(err, res.body);
+  });
+
 });
 
 ```
