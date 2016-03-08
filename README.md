@@ -18,6 +18,7 @@ var client = new RequestServiceDiscovery({
   connectionString: '127.0.0.1:2181',
   basePath: 'services',
   serviceName: 'my/service/v1',
+  providerStrategy: 'RoundRobin',
   verbose: false,
   timeout: 1000,
   retries: 2,

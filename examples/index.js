@@ -5,13 +5,17 @@ var RequestServiceDiscovery = require('../');
 var fooClient = new RequestServiceDiscovery({
   connectionString: '127.0.0.1:2181',
   basePath: 'services',
-  serviceName: 'foo/service/v1'
+  serviceName: 'foo/service/v1',
+  providerStrategy: 'RoundRobin',
+  verbose: true
 });
 
 var barClient = new RequestServiceDiscovery({
   connectionString: '127.0.0.1:2181',
   basePath: 'services',
-  serviceName: 'bar/service/v1'
+  serviceName: 'bar/service/v1',
+  providerStrategy: 'Random',
+  verbose: true
 });
 
 client1.on('connected', function() {
