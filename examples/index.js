@@ -7,7 +7,8 @@ var fooClient = new RequestServiceDiscovery({
   basePath: 'services',
   serviceName: 'foo/service/v1',
   providerStrategy: 'RoundRobin',
-  verbose: true
+  verbose: true,
+  correlationHeaderName: 'X-My-Correlation-ID'
 });
 
 var barClient = new RequestServiceDiscovery({
@@ -18,14 +19,14 @@ var barClient = new RequestServiceDiscovery({
   verbose: true
 });
 
-client1.on('connected', function() {
-  client1.get('actuator/health', null, function(err, res) {
-    console.log(err, res.body);
+fooClient.on('connected', function() {
+  fooClient.get('actuator/health', null, function(err, res) {
+    console.log(err, res);
   });
 });
 
-client2.on('connected', function() {
-  client2.get('actuator/health', null, function(err, res) {
-    console.log(err, res.body);
+barClient.on('connected', function() {
+  barClient.get('actuator/health', null, function(err, res) {
+    console.log(err, res);
   });
 });

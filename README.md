@@ -23,7 +23,8 @@ var client = new RequestServiceDiscovery({
   timeout: 1000,
   retries: 2,
   minTimeout: 5,
-  maxTimeout: 50
+  maxTimeout: 50,
+  correlationHeaderName: 'My-Correlation-ID'
 });
 
 var query = {
