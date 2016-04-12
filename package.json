@@ -1,6 +1,6 @@
 {
   "name": "request-service-discovery",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "An extension to request to facilitate making requests against discoverable services",
   "main": "index.js",
   "scripts": {
