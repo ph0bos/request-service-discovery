@@ -16,7 +16,8 @@ var barClient = new RequestServiceDiscovery({
   basePath: 'services',
   serviceName: 'bar/service/v1',
   providerStrategy: 'Random',
-  verbose: true
+  verbose: true,
+  retries: 0
 });
 
 fooClient.on('connected', function() {
