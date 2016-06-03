@@ -44,6 +44,27 @@ describe('request-service-discovery', function () {
     });
   });
 
+  it('calling get() with a missing uri argument should throw an error', function (done) {
+    var instance = _createInstance();
+
+    (function() { instance.get(null, function(err, result) {}) }).should.throw('uri [string] must be provided');
+    done();
+  });
+
+  it('calling get() with a missing options argument should throw an error', function (done) {
+    var instance = _createInstance();
+
+    (function() { instance.get('resource-name/1234', function(err, result) {}) }).should.throw('options [object] must be provided');
+    done();
+  });
+
+  it('calling get() with a missing options argument should throw an error', function (done) {
+    var instance = _createInstance();
+
+    (function() { instance.get('resource-name/1234', null) }).should.throw('callback [function] must be provided');
+    done();
+  });
+
   it('calling put() when the zoologist is not connected it should throw an error', function (done) {
     mockery.registerMock('./zoologist', _createDisconnectedZoologistMock());
 
@@ -53,6 +74,27 @@ describe('request-service-discovery', function () {
       err.should.be.defined;
       done();
     });
+  });
+
+  it('calling put() with a missing uri argument should throw an error', function (done) {
+    var instance = _createInstance();
+
+    (function() { instance.put(null, null, function(err, result) {}) }).should.throw('uri [string] must be provided');
+    done();
+  });
+
+  it('calling put() with a missing callback argument should throw an error', function (done) {
+    var instance = _createInstance();
+
+    (function() { instance.put('resource-name/1234', null, null) }).should.throw('callback [function] must be provided');
+    done();
+  });
+
+  it('calling put() with a missing body argument should throw an error', function (done) {
+    var instance = _createInstance();
+
+    (function() { instance.put('resource-name/1234', null, function(err, result) {}) }).should.throw('body [object] must be provided');
+    done();
   });
 
   it('calling post() when the zoologist is not connected it should throw an error', function (done) {
@@ -66,6 +108,27 @@ describe('request-service-discovery', function () {
     });
   });
 
+  it('calling post() with a missing uri argument should throw an error', function (done) {
+    var instance = _createInstance();
+
+    (function() { instance.post(null, null, function(err, result) {}) }).should.throw('uri [string] must be provided');
+    done();
+  });
+
+  it('calling post() with a missing callback argument should throw an error', function (done) {
+    var instance = _createInstance();
+
+    (function() { instance.post('resource-name/1234', null, null) }).should.throw('callback [function] must be provided');
+    done();
+  });
+
+  it('calling post() with a missing body argument should throw an error', function (done) {
+    var instance = _createInstance();
+
+    (function() { instance.post('resource-name/1234', null, function(err, result) {}) }).should.throw('body [object] must be provided');
+    done();
+  });
+
   it('calling delete() when the zoologist is not connected it should throw an error', function (done) {
     mockery.registerMock('./zoologist', _createDisconnectedZoologistMock());
 
@@ -75,6 +138,27 @@ describe('request-service-discovery', function () {
       err.should.be.defined;
       done();
     });
+  });
+
+  it('calling delete() with a missing uri argument should throw an error', function (done) {
+    var instance = _createInstance();
+
+    (function() { instance.delete(null, function(err, result) {}) }).should.throw('uri [string] must be provided');
+    done();
+  });
+
+  it('calling delete() with a missing options argument should throw an error', function (done) {
+    var instance = _createInstance();
+
+    (function() { instance.delete('resource-name/1234', function(err, result) {}) }).should.throw('options [object] must be provided');
+    done();
+  });
+
+  it('calling delete() with a missing options argument should throw an error', function (done) {
+    var instance = _createInstance();
+
+    (function() { instance.delete('resource-name/1234', null) }).should.throw('callback [function] must be provided');
+    done();
   });
 
   it('calling method() when the no object method is passed in should throw an error', function (done) {
@@ -108,6 +192,27 @@ describe('request-service-discovery', function () {
       err.should.be.defined;
       done();
     });
+  });
+
+  it('calling method() with a missing uri argument should throw an error', function (done) {
+    var instance = _createInstance();
+
+    (function() { instance.method(null, function(err, result) {}) }).should.throw('uri [string] must be provided');
+    done();
+  });
+
+  it('calling method() with a missing options argument should throw an error', function (done) {
+    var instance = _createInstance();
+
+    (function() { instance.method('resource-name/1234', function(err, result) {}) }).should.throw('options [object] must be provided');
+    done();
+  });
+
+  it('calling method() with a missing options argument should throw an error', function (done) {
+    var instance = _createInstance();
+
+    (function() { instance.method('resource-name/1234', null) }).should.throw('callback [function] must be provided');
+    done();
   });
 });
 
