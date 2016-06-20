@@ -57,13 +57,13 @@ client.on('connected', function() {
     callback(err, res.body);
   });
 
-  // Invoke a PUT request against the service
-  client.delete('item', { query: query, headers: headers }, function(err, res) {
+  // Invoke a DELETE request against the service
+  client.delete('item', { query: query, headers: headers }, body, function(err, res) {
     callback(err, res.body);
   });
 
   // Invoke a GET request against the service
-  client.method('item/search', { method: 'GET', query: query, headers: headers }, function(err, res) {
+  client.method('item/search', { method: 'GET', query: query, headers: headers }, body, (err, res) {
     callback(err, res.body);
   });
 

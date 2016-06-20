@@ -134,7 +134,7 @@ describe('request-service-discovery', function () {
 
     var instance = _createInstance();
 
-    instance.delete('resource-name/1234', null, function(err, result) {
+    instance.delete('resource-name/1234', null, null, function(err, result) {
       err.should.be.defined;
       done();
     });
@@ -166,7 +166,7 @@ describe('request-service-discovery', function () {
 
     var instance = _createInstance();
 
-    instance.method('resource-name/1234', null, function(err, result) {
+    instance.method('resource-name/1234', null, null, function(err, result) {
       err.should.be.defined;
       done();
     });
@@ -177,7 +177,7 @@ describe('request-service-discovery', function () {
 
     var instance = _createInstance();
 
-    instance.method('resource-name/1234', {method: "BURST"}, function(err, result) {
+    instance.method('resource-name/1234', {method: "BURST"}, null, function(err, result) {
       err.should.be.defined;
       done();
     });
@@ -188,7 +188,7 @@ describe('request-service-discovery', function () {
 
     var instance = _createInstance();
 
-    instance.method('resource-name/1234', {method: "GET"}, function(err, result) {
+    instance.method('resource-name/1234', {method: "GET"}, null, function(err, result) {
       err.should.be.defined;
       done();
     });
@@ -197,7 +197,7 @@ describe('request-service-discovery', function () {
   it('calling method() with a missing uri argument should throw an error', function (done) {
     var instance = _createInstance();
 
-    (function() { instance.method(null, function(err, result) {}) }).should.throw('uri [string] must be provided');
+    (function() { instance.method(null, null, function(err, result) {}) }).should.throw('uri [string] must be provided');
     done();
   });
 
