@@ -90,13 +90,6 @@ describe('request-service-discovery', function () {
     done();
   });
 
-  it('calling put() with a missing body argument should throw an error', function (done) {
-    var instance = _createInstance();
-
-    (function() { instance.put('resource-name/1234', null, function(err, result) {}) }).should.throw('body [object] must be provided');
-    done();
-  });
-
   it('calling post() when the zoologist is not connected it should throw an error', function (done) {
     mockery.registerMock('./zoologist', _createDisconnectedZoologistMock());
 
@@ -119,13 +112,6 @@ describe('request-service-discovery', function () {
     var instance = _createInstance();
 
     (function() { instance.post('resource-name/1234', null, null) }).should.throw('callback [function] must be provided');
-    done();
-  });
-
-  it('calling post() with a missing body argument should throw an error', function (done) {
-    var instance = _createInstance();
-
-    (function() { instance.post('resource-name/1234', null, function(err, result) {}) }).should.throw('body [object] must be provided');
     done();
   });
 
