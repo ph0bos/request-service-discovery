@@ -1,6 +1,6 @@
 {
   "name": "request-service-discovery",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An extension to request to facilitate making requests against discoverable services",
   "main": "index.js",
   "scripts": {
@@ -23,8 +23,8 @@
     "request": "^2.65.0",
     "retry": "^0.8.0",
     "unirest": "^0.4.2",
-    "uuid": "^2.0.1",
-    "zoologist": "0.4.14"
+    "uuid": "^3.0.0",
+    "zoologist": "0.5.8"
   },
   "devDependencies": {
     "chai": "^1.10.0",
