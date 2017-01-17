@@ -207,7 +207,9 @@ function _createInstance() {
     basePath: 'services',
     serviceName: 'test/service/v1',
     connectionString: '127.0.0.1:2181',
-    verbose: false
+    verbose: false,
+    connectTimeout: 5000,
+    sessionTimeout: 30000
   });
 }
 
