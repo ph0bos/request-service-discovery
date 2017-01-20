@@ -24,7 +24,7 @@
     "retry": "^0.8.0",
     "unirest": "^0.4.2",
     "uuid": "^3.0.0",
-    "zoologist": "0.5.8"
+    "zoologist": "0.5.9"
   },
   "devDependencies": {
     "chai": "^1.10.0",
