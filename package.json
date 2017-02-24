@@ -22,7 +22,7 @@
     "custom-error-generator": "^7.0.0",
     "request": "^2.65.0",
     "retry": "^0.8.0",
-    "unirest": "^0.4.2",
+    "unirest": "^0.5.1",
     "uuid": "^3.0.0",
     "zoologist": "0.5.9"
   },
