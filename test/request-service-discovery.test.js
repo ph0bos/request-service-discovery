@@ -28,7 +28,7 @@ describe('request-service-discovery', function () {
     var instance = _createInstance();
 
     instance.get('resource-name/1234', null, function(err, result) {
-      err.should.be.defined;
+      err.should.not.be.undefined;
       done();
     });
   });
@@ -39,7 +39,7 @@ describe('request-service-discovery', function () {
     var instance = _createInstanceWithMissingService();
 
     instance.get('resource-name/1234', null, function(err, result) {
-      err.should.be.defined;
+      err.should.not.be.undefined;
       done();
     });
   });
@@ -71,7 +71,7 @@ describe('request-service-discovery', function () {
     var instance = _createInstance();
 
     instance.put('resource-name/1234', null, null, function(err, result) {
-      err.should.be.defined;
+      err.should.not.be.undefined;
       done();
     });
   });
@@ -96,7 +96,7 @@ describe('request-service-discovery', function () {
     var instance = _createInstance();
 
     instance.post('resource-name', null, null, function(err, result) {
-      err.should.be.defined;
+      err.should.not.be.undefined;
       done();
     });
   });
@@ -121,7 +121,7 @@ describe('request-service-discovery', function () {
     var instance = _createInstance();
 
     instance.delete('resource-name/1234', null, null, function(err, result) {
-      err.should.be.defined;
+      err.should.not.be.undefined;
       done();
     });
   });
@@ -153,7 +153,7 @@ describe('request-service-discovery', function () {
     var instance = _createInstance();
 
     instance.method('resource-name/1234', null, null, function(err, result) {
-      err.should.be.defined;
+      err.should.not.be.undefined;
       done();
     });
   });
@@ -164,7 +164,7 @@ describe('request-service-discovery', function () {
     var instance = _createInstance();
 
     instance.method('resource-name/1234', {method: "BURST"}, null, function(err, result) {
-      err.should.be.defined;
+      err.should.not.be.undefined;
       done();
     });
   });
@@ -175,7 +175,7 @@ describe('request-service-discovery', function () {
     var instance = _createInstance();
 
     instance.method('resource-name/1234', {method: "GET"}, null, function(err, result) {
-      err.should.be.defined;
+      err.should.not.be.undefined;
       done();
     });
   });
